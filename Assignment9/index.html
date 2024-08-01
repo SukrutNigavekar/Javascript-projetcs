@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>HidePassword</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .main {
+        width: 100%;
+      }
+      .main > .container {
+        width: 80%;
+        height: 300px;
+        margin: auto;
+        background-color: red;
+      }
+      .main > .container > .box {
+        width: 50%;
+        height: 300px;
+        background-color: goldenrod;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      input {
+        height: 25px;
+      }
+      .box > .btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 15px;
+        line-height: 25px;
+        margin: 0 20px;
+        background-color: #0866FF;
+      }
+      .box > .btn> .open-eye{
+        font-size: 20px;
+        padding: 10px 9px;
+      }
+      .box > .btn> .close-eye{
+        font-size: 18px;
+        padding: 10px 9px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="box">
+          <input type="password" />
+          <div class="btn" onclick="hidePassword()">
+            <i class="fa-solid fa-eye open-eye"></i>
+            <i class="fa-solid fa-eye-slash close-eye"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let action = document.querySelector("input");
+    let btn = document.querySelector(".btn");
+    let visibility =document.querySelectorAll("i")
+
+    visibility[1].style.display = "none"
+    
+    function hidePassword(){
+      if(action.type=="text"){
+        action.type = "password"
+        visibility[0].style.display = "block"
+        visibility[1].style.display = "none"
+      }
+      else{
+        action.type = "text"
+        visibility[0].style.display = "none"
+        visibility[1].style.display = "block"
+      }
+    }
+  </script>
+</html>

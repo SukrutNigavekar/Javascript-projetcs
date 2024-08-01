@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.header{
+  width: 100%;
+  height: 100px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 10px 3px #ccc;
+}
+.header > .logo{
+  flex-basis: 12%;
+  padding: 10px;
+  /* background-color: yellow; */
+}
+.header > .logo > img{
+  width: 200px;
+}
+.header>.navbar{
+  flex-basis: 16%;
+}
+.header>.navbar>i{
+  display: none;
+}
+.header>.navbar> ul{
+width: 100%;
+display: flex;
+justify-content: flex-end;
+}
+.header>.navbar> ul>li{
+padding: 0 20px;
+line-height: 90px;
+font-size: 20px;
+color: #0095DA;
+list-style: none;
+text-align: center;
+}

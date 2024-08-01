@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfect Number 11</title>
+  </head>
+  <body></body>
+  <script>
+    // for (let i = 1; i <= 1000; i++) {
+    //   var sum = 0;
+    //   for (let j = 1; j < i; j++) {
+    //     if (i % j == 0) {
+    //       sum += i;
+    //     }
+    //   }
+    //   if (sum == i) {
+    //     document.write(i, "<br/>");
+    //   }
+    //   var sum = 0;
+    // }
+
+    var sum = 0;
+
+    for (var n = 1; n < 1000; n++) {
+      for (var i = 1; i < n; i++) {
+        if (n % i == 0) {
+          sum = sum + i;
+        }
+      }
+
+      if (sum == n) {
+        console.log(n);
+      }
+      sum = 0;
+    }
+  </script>
+</html>

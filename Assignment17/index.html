@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>localStorage</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="form">
+          <form onsubmit="userData(event)">
+            <input type="text" name="Uname" placeholder="Enter your name" />
+            <input type="text" name="Uemail" placeholder="Enter your email" />
+            <input type="text" name="Umobile" placeholder="Enter your mobile" />
+            <input
+              type="text"
+              name="Upassword"
+              placeholder="Enter your password"
+            />
+            <button>Submit</button>
+          </form>
+        </div>
+        <div class="databox">
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Sr.No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Password</th>
+                <th>
+                  <button
+                    onclick="removeAll()"
+                    style="font-size: 18px; padding: 10px 15px"
+                  >
+                    Remove all
+                  </button>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let allData;
+    function userData(e) {
+      e.preventDefault();
+      let userObj = {
+        name: e.target.Uname.value,
+        email: e.target.Uemail.value,
+        mobile: e.target.Umobile.value,
+        password: e.target.Upassword.value,
+      };
+      if (
+        userObj.name == "" ||
+        userObj.email == "" ||
+        userObj.mobile == "" ||
+        userObj.password == ""
+      ) {
+        alert("Please fill form first");
+      } else {
+        let previousData = JSON.parse(localStorage.getItem("userData")) ?? [];
+
+        allData = [...previousData, userObj];
+
+        localStorage.setItem("userData", JSON.stringify(allData));
+
+        let inputfield = document.querySelectorAll("input");
+        inputfield.forEach((input) => {
+          input.value = "";
+        });
+        showData();
+      }
+    }
+
+    let tbody = document.querySelector("#tbody");
+    let mylocalData;
+    function showData() {
+      mylocalData = JSON.parse(localStorage.getItem("userData")) ?? [];
+      tbody.innerHTML = "";
+      mylocalData.map((v, i) => {
+        // console.log(v);
+        tbody.innerHTML += `
+              <tr>
+                <td>${i + 1}</td>
+                <td>${v.name}</td>
+                <td>${v.email}</td>
+                <td>${v.mobile}</td>
+                <td>${v.password}</td>
+                <td onclick="deleteRow(${i})"> <button style="padding: 10px 15px; font-size:18px"> delete</button></td>
+              </tr>
+        `;
+      });
+    }
+    function deleteRow(index) {
+      let answer = confirm("Do you want to delete?");
+      if (answer) {
+        mylocalData.splice(index, 1);
+        localStorage.setItem("userData", JSON.stringify(mylocalData));
+        showData();
+      } else {
+        alert("No data deleted");
+      }
+    }
+    function removeAll() {
+      if (localStorage.getItem("userData") === null) {
+        alert("No records to be deleted!");
+      } else {
+        let answer = confirm("Do you want to delete all records?");
+        if (answer) {
+          localStorage.removeItem("userData");
+          showData();
+          setTimeout(() => {
+            alert("All data deleted!");
+          }, 1000);
+        }
+        // localStorage.clear();
+        else {
+          alert("No data deleted");
+        }
+      }
+    }
+  </script>
+</html>

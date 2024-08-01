@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array within Array</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let a = ["1st Array",1,2,3,4,5,["2nd Array","Web","Developer",2,3,4,5,6,7,["3rd", "Array",111,222,["4th Array","#","@","<",">","4th array end"],333,444]]];
+  // let merge = a.flat(1)
+  let merge = [].concat([],a)
+  document.writeln(merge);
+</script>
+</html>

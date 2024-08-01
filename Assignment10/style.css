@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body{
+  position: relative;
+}
+.main {
+  width: 100%;
+}
+.bgChange {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+}
+.main > .form {
+  width: 50%;
+  margin: 50px auto;
+  border: 1px solid red;
+  border-radius: 15px;
+  position: absolute;
+  top: -1200%;
+  left: 370px;
+  transition: 1.5s;
+}
+.active{
+  top: 5% !important;
+}
+.main > .form > .row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+}
+.main > .form > .row1 > h1 {
+  font-size: 22px;
+}
+.main > .form > .row1 > button{
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 20px;
+  
+}
+.main > .form > .row2 {
+  width: 100%;
+}
+.main > .form > .row2 > form > .fmCon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.main > .form > .row2 > form > .fmCon > .col {
+  width: 48%;
+}
+.main > .form > .row2 > form > .fmCon > .col > label {
+  display: block;
+  font-size: 18px;
+  height: 30px;
+  padding-left: 8px;
+  padding: 10px 0 0 5px;
+}
+.main > .form > .row2 > form > .fmCon > .col > input {
+  width: 96.5%;
+  height: 20px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.main > .form > .row2 > form > .fmCon > .col > select {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1.5px solid black;
+}
+/* input{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+} */
+.main > .form > .row2 > form > .fullCol{
+  width: 98%;
+  margin: auto;
+  padding: 15px 0;
+}
+.main > .form > .row2 > form > .fullCol > label{
+  width: 100%;
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.main > .form > .row2 > form > .fullCol > textarea{
+  width: 100%;
+  margin: auto;
+}
+.main > .form > .row2 > form > .fullCol > button{
+  background-color: #2699FB;
+  border: 1px solid #2699FB;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  padding: 10px 50px;
+  margin: 10px 290px;
+} 
+
+body>button{
+  background-color: #2699FB;
+  color: white;
+  font-size: 15px;
+  padding: 10px 20px;
+  margin: 5px 0;
+  margin-left: 5px;
+}

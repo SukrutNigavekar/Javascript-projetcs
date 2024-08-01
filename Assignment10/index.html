@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>sliding form</title>
+  </head>
+  <body>
+    <button>Show Model</button>
+    <div class="main">
+      <div class="form">
+        <div class="row1">
+          <h1>Book your demo class!</h1>
+          <button class="close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <hr />
+        <div class="row2">
+          <form>
+            <div class="fmCon">
+              <div class="col">
+                <label for="">Name</label>
+                <input type="text" />
+                <label for="">Email</label>
+                <input type="text" />
+                <label for="">Training Center</label>
+                <select name="" id="">
+                  <option value="">Select option</option>
+                  <option value="">Jodhapur</option>
+                  <option value="">Jaypur</option>
+                  <option value="">Pune</option>
+                  <option value="">Maharastra</option>
+                </select>
+              </div>
+              <div class="col">
+                <label for="">Mobile Number</label>
+                <input type="text" />
+                <label for="">Course Type</label>
+
+                <select name="" id="">
+                  <option value="">Select option</option>
+                  <option value="">Online</option>
+                  <option value="">Offline</option>
+                </select>
+                <label for="">Choose Course</label>
+
+                <select name="" id="">
+                  <option value="">Select option</option>
+                  <option value="">Web development</option>
+                  <option value="">App development</option>
+                  <option value="">Software development</option>
+                </select>
+              </div>
+            </div>
+            <div class="fullCol">
+              <label for="">Message</label>
+              <textarea name="" id="" rows="8"></textarea>
+              <button>Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let form = document.querySelector(".form");
+    let btn = document.querySelector("button");
+    let cross = document.querySelector(".close");
+    btn.addEventListener("click", () => {
+      if (btn.innerHTML == "Show Model") {
+        btn.innerHTML = "Hide Model";
+        form.classList.add("active");
+      } else {
+        btn.innerHTML = "Show Model";
+        form.classList.remove("active");
+      }
+    });
+    cross.addEventListener("click", () => {
+      btn.innerHTML = "Show Model";
+      form.classList.remove("active");
+    });
+    body.addEventListener("click",()=>{
+      form.classList.remove("active");
+    })
+  </script>
+</html>

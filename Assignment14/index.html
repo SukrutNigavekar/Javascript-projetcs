@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:32,height:32/https://cdn.filestackcontent.com/9UqTy8xRRmZvQHGMWFeS"
+      rel="icon"
+      type="image/png"
+    />
+    <title>FAQ</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="row">
+        <h3>
+          FAQ question 1 <span><i class="fa-solid fa-chevron-down"></i></span>
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet saepe
+          iure dolore cumque excepturi hic aliquid blanditiis dolorum provident
+          repellat recusandae magni dolores ut alias ullam ipsa soluta unde, eos
+          optio inventore possimus. Nostrum rem ut voluptatem quae blanditiis,
+          hic veniam saepe perferendis quibusdam reiciendis. Sequi, temporibus
+          odit libero cum maxime corrupti dolores a reprehenderit quidem optio.
+          Architecto qui eveniet unde ut iusto iste quaerat modi rem
+          consequatur. Error temporibus consectetur cumque quibusdam alias?
+          Eligendi qui saepe deleniti fuga cumque ipsam velit, in nulla
+          voluptate. Minima possimus, aliquid tempore cupiditate illo eos
+          inventore similique consequuntur, recusandae excepturi voluptates?
+          Corrupti, corporis.
+        </p>
+      </div>
+      <div class="row">
+        <h3>
+          FAQ question 2 <span><i class="fa-solid fa-chevron-down"></i></span>
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet saepe
+          iure dolore cumque excepturi hic aliquid blanditiis dolorum provident
+          repellat recusandae magni dolores ut alias ullam ipsa soluta unde, eos
+          optio inventore possimus. Nostrum rem ut voluptatem quae blanditiis,
+          hic veniam saepe perferendis quibusdam reiciendis. Sequi, temporibus
+          odit libero cum maxime corrupti dolores a reprehenderit quidem optio.
+          Architecto qui eveniet unde ut iusto iste quaerat modi rem
+          consequatur. Error temporibus consectetur cumque quibusdam alias?
+          Eligendi qui saepe deleniti fuga cumque ipsam velit, in nulla
+          voluptate. Minima possimus, aliquid tempore cupiditate illo eos
+          inventore similique consequuntur, recusandae excepturi voluptates?
+          Corrupti, corporis.
+        </p>
+      </div>
+      <div class="row">
+        <h3>
+          FAQ question 3 <span><i class="fa-solid fa-chevron-down"></i></span>
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet saepe
+          iure dolore cumque excepturi hic aliquid blanditiis dolorum provident
+          repellat recusandae magni dolores ut alias ullam ipsa soluta unde, eos
+          optio inventore possimus. Nostrum rem ut voluptatem quae blanditiis,
+          hic veniam saepe perferendis quibusdam reiciendis. Sequi, temporibus
+          odit libero cum maxime corrupti dolores a reprehenderit quidem optio.
+          Architecto qui eveniet unde ut iusto iste quaerat modi rem
+          consequatur. Error temporibus consectetur cumque quibusdam alias?
+          Eligendi qui saepe deleniti fuga cumque ipsam velit, in nulla
+          voluptate. Minima possimus, aliquid tempore cupiditate illo eos
+          inventore similique consequuntur, recusandae excepturi voluptates?
+          Corrupti, corporis.
+        </p>
+      </div>
+    </div>
+  </body>
+  <script>
+    let all = document.querySelectorAll("h3");
+
+    all.forEach((v) => {
+      v.addEventListener("click", () => {
+        all.forEach((item) => {
+          if (item !== v) {
+            item.nextElementSibling.classList.remove("active");
+            
+            let item_i = item.querySelector("i");
+            item_i.classList.add("fa-chevron-down");
+            item_i.classList.remove("fa-chevron-up");
+          }
+        });
+        v.nextElementSibling.classList.toggle("active");
+
+        let itag = v.querySelector("i")
+
+        itag.classList.toggle("fa-chevron-down")
+        itag.classList.toggle("fa-chevron-up")
+      });
+    });
+  </script>
+</html>
+<!-- <i class="fa-solid fa-chevron-up"></i> -->

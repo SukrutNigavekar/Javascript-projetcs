@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Age Calculator</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="dob">
+          <input type="date" placeholder="select date" />
+          <h3>select your date of birth</h3>
+        </div>
+        <div class="dob">
+          <button>Get age</button>
+        </div>
+        <div class="resultHolder">
+          <p class="result"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let btn = document.querySelector("button");
+
+    btn.addEventListener("click", () => {
+      let birthDate = document.querySelector("input");
+      let inputDate = birthDate.value;
+      let result = document.querySelector(".result");
+      if (!inputDate) {
+        alert("Please select the date of birth!");
+      } else {
+        const birthdate = new Date(inputDate);
+        const today = new Date();
+        let age = today.getFullYear() - birthdate.getFullYear();
+
+        let monthDiff = today.getMonth() - birthdate.getMonth();
+
+        let dayDiff = today.getDate() - birthdate.getDate();
+
+        if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+          age--;
+        }
+        result.innerHTML = `Your age is ${age} years.`;
+        birthDate.value = ``;
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>greate and smaller number</title>
+</head>
+<body>
+  
+</body>
+<script>
+  let arr = [55,33,8,9,-22,-55,21,100,120]
+  let secMaxValue = -Infinity
+  let secMinValue= Infinity;
+
+  let maxValue = Math.max(...arr);
+  let minValue= Math.min(...arr);
+  
+  for(let b of arr){
+    if( b>secMaxValue && b<maxValue){
+      secMaxValue = b;
+    }
+  }
+  for(let c of arr){
+    if( c<secMinValue && c>minValue){
+      secMinValue = c;
+    }
+  }
+  console.log("This is maximum value of array "+maxValue)
+  console.log("This is second maximum value of array "+secMaxValue)
+  console.log("This is minimum value of array "+minValue)
+  console.log("This is second minimum value of array "+secMinValue)
+  
+</script>
+</html>

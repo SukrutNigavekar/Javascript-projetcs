@@ -1,0 +1,28 @@
+@media only screen and (min-width: 200px) and (max-width: 575px) 
+{
+  body{
+    position: relative;
+  }
+  .header>.logo{
+    flex-basis: 46%;
+  }
+  .header>.navbar> i{
+    display: block;
+    height: 25px;
+    font-size: 20px;
+    color: black;
+    line-height: 100px;
+  }
+  .header>.navbar> ul{
+    width: 80%;
+    background-color: aqua;
+    position: absolute;
+    top: 101px;
+    left: -100%;
+    flex-direction: column;
+    transition: 1.5s;
+  }
+  .active{
+    left: 0 !important;
+  }
+}
